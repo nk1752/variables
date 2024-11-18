@@ -24,12 +24,13 @@ jobs:
         run: |
           rustc --version
           cargo --version
+          ls -l
 
       - name: install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y libssl-dev
-          
+
       - name: Build
         run: make build
       # - name: Test

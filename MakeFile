@@ -1,8 +1,11 @@
+TARGET := wasm32-wasi
+TARGET_DIR := target/$(TARGET)/release
+
 msg = "Hello World"
 .PHONEY: run
 run:
 	cargo run --release
-	
+
 .PHONEY: build
 build:
   cargo build --release
