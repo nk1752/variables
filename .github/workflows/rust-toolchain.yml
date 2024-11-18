@@ -21,9 +21,9 @@ jobs:
           echo "${{ github.workspace }}"
           echo "$GITHUB_WORKSPACE"
 
-      # # Step 3: Run the Makefile targets
-      # - name: Display Nadeem
-      #   run: make nadeem
+      # Step 3: Run the Makefile targets
+      - name: Display Nadeem
+        run: make nadeem
 
       - name: Set up Rust
         uses: actions-rs/toolchain@v1
