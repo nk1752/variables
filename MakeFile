@@ -1,4 +1,6 @@
+
+
 .PHONEY: build
-build: cargo
-	@echo "Building..."
-	@$(CARGO) build --release
+build:
+  cargo build --release
+	
