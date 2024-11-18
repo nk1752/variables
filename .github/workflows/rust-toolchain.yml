@@ -27,7 +27,7 @@ jobs:
 
       
       - name: Build
-        run: cargo build --release
+        run: make build
       # - name: Test
       #   run: cargo test
       # - name: Check
