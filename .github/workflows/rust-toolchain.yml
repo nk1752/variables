@@ -27,7 +27,7 @@ jobs:
           ls -l
 
       - name: Display
-        run: make display
+        run: ${{ GITHUB.WORKSPACE }}/make display
 
       - name: Build
         run: cargo build
