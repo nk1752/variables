@@ -7,8 +7,6 @@ NAME = "world"
 build:
   cargo build --release
 	
-.PHONEY: display
+.PHONY: display
 display:
-	ls -l $(TARGET_DIR)
-	echo $(MSG)
-	echo $(NAME)
+    echo "Displaying something"
