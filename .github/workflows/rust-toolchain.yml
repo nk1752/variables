@@ -1,0 +1,45 @@
+name: rust-toolchain
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: repo checkouy
+        uses: actions/checkout@v2
+        
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: check rust version
+        run: rustc --version
+
+      
+      # - name: Build
+      #   run: cargo build --release
+      # - name: Test
+      #   run: cargo test
+      # - name: Check
+      #   run: cargo check
+      # - name: Clippy
+      #   run: cargo clippy -- -D warnings
+      # - name: Format
+      #   run: cargo fmt -- --check
+      # - name: Doc
+      #   run: cargo doc --no-deps
+      # - name: Audit
+      #   run: cargo audit
+      # - name: Bench
+      #   run: cargo bench
+      # - name: Run
+      #   run: cargo run
+      # - name: Clean
+      #   run: cargo clean
