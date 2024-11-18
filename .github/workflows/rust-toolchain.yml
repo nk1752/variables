@@ -22,14 +22,14 @@ jobs:
           echo "$GITHUB_WORKSPACE"
 
       # Step 3: Run the Makefile targets
-      - name: Display Nadeem
-        run: make nadeem
+      - name: install rust
+        run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
-      - name: Set up Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
+      # - name: Set up Rust
+      #   uses: actions-rs/toolchain@v1
+      #   with:
+      #     toolchain: stable
+      #     override: true
 
       - name: check rust version
         run: |
