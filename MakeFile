@@ -1,4 +1,2 @@
-.PHONY: display
-
 display:
     echo "Displaying something"

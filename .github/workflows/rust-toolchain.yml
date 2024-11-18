@@ -11,9 +11,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: repo checkouy
+      - name: repo checkout
         uses: actions/checkout@v2
-        
+
+      - name: Display
+        run: |
+          make display
+
       - name: Set up Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -25,11 +29,6 @@ jobs:
           rustc --version
           cargo --version
           ls -l
-
-      - name: Display
-        run: |
-          cmake --version
-          make display
 
       - name: Build
         run: cargo build
