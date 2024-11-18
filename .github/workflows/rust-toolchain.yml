@@ -21,11 +21,13 @@ jobs:
           override: true
 
       - name: check rust version
-        run: rustc --version
+        run: |
+          rustc --version
+          cargo --version
 
       
-      # - name: Build
-      #   run: cargo build --release
+      - name: Build
+        run: cargo build --release
       # - name: Test
       #   run: cargo test
       # - name: Check
@@ -44,3 +46,8 @@ jobs:
       #   run: cargo run
       # - name: Clean
       #   run: cargo clean
+
+      - name: check yaml
+        run: |
+          ls -l
+          cat output.yaml
