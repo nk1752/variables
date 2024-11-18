@@ -1,12 +1,4 @@
-TARGET = $(GITHUB_WORKSPACE)
-TARGET_DIR = target/$(TARGET)/release
-MSG = "Hello, World!"
-NAME = "world"
-
-.PHONEY: build
-build:
-  cargo build --release
-	
 .PHONY: display
+
 display:
     echo "Displaying something"

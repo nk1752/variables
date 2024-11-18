@@ -26,11 +26,10 @@ jobs:
           cargo --version
           ls -l
 
-      - name: install make utility
-        run: sudo apt-get install make
-
       - name: Display
-        run: make display
+        run: |
+          cmake --version
+          make display
 
       - name: Build
         run: cargo build
