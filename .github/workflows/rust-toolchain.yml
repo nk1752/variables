@@ -14,9 +14,16 @@ jobs:
       - name: repo checkout
         uses: actions/checkout@v2
 
-      # Step 3: Run the Makefile targets
-      - name: Display Nadeem
-        run: make nadeem
+      - name: workspace
+        run: |
+          ls -l
+          pwd
+          echo "${{ github.workspace }}"
+          echo "$GITHUB_WORKSPACE"
+
+      # # Step 3: Run the Makefile targets
+      # - name: Display Nadeem
+      #   run: make nadeem
 
       - name: Set up Rust
         uses: actions-rs/toolchain@v1
