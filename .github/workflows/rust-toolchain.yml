@@ -26,8 +26,11 @@ jobs:
           cargo --version
           ls -l
 
+      - name: install make utility
+        run: sudo apt-get install make
+
       - name: Display
-        run: ${{ GITHUB.WORKSPACE }}/make display
+        run: make display
 
       - name: Build
         run: cargo build
