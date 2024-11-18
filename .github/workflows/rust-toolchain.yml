@@ -14,9 +14,20 @@ jobs:
       - name: repo checkout
         uses: actions/checkout@v2
 
-      - name: Display
-        run: |
-          make display
+      # Step 2: Set up dependencies (if needed)
+      - name: Set up dependencies
+        run: sudo apt update && sudo apt install -y build-essential
+
+      # Step 3: Run the Makefile targets
+      - name: Build the project
+        run: make build
+
+      - name: Run tests
+        run: make test
+
+      # Optional: Clean up files
+      - name: Clean up
+        run: make clean
 
       - name: Set up Rust
         uses: actions-rs/toolchain@v1
