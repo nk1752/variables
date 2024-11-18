@@ -26,13 +26,11 @@ jobs:
           cargo --version
           ls -l
 
-      - name: install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libssl-dev
+      - name: Display
+        run: make display
 
       - name: Build
-        run: make build
+        run: cargo build
       # - name: Test
       #   run: cargo test
       # - name: Check
