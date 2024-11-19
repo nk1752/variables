@@ -24,7 +24,7 @@ jobs:
 
       - name: run make for nadeem
         run: |
-          make -C nadeem
+          make nadeem
 
       # Step 3: Run the Makefile targets
       - name: install rust
@@ -43,7 +43,7 @@ jobs:
         run: |
           rustc --version
           cargo --version
-          ls -la
+          ls -la $HOME/.cargo/bin
 
       - name: Build
         run: cargo build
