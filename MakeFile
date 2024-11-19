@@ -1,4 +1,4 @@
-nk := nadeem
-all:
+nk := khalid
+nadeem:
 	  echo "Hello World"
 		echo $(nk)

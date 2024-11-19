@@ -24,7 +24,7 @@ jobs:
 
       - name: run make for nadeem
         run: |
-          make -f $(GITHUB_WORKSPACE)/Makefile
+          make -f Makefile nadeem
 
       # Step 3: Run the Makefile targets
       - name: install rust
