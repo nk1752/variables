@@ -23,7 +23,10 @@ jobs:
 
       # Step 3: Run the Makefile targets
       - name: install rust
-        run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+        run: \
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+          . $HOME/.cargo/env
+
 
       # - name: Set up Rust
       #   uses: actions-rs/toolchain@v1
@@ -35,7 +38,7 @@ jobs:
         run: |
           rustc --version
           cargo --version
-          ls -l
+          ls -la
 
       - name: Build
         run: cargo build
