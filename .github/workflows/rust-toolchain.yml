@@ -20,6 +20,11 @@ jobs:
           echo "$pwd/hello"
           echo "${{ github.workspace }}"
           echo "$GITHUB_WORKSPACE"
+          echo "$HOME"
+
+      - name: run make for nadeem
+        run: |
+          make -C nadeem
 
       # Step 3: Run the Makefile targets
       - name: install rust
