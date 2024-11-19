@@ -1,3 +1,4 @@
-.PHONY: nadeem
-nadeem:
+nk := nadeem
+all:
 	  echo "Hello World"
+		echo $(nk)

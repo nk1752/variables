@@ -24,7 +24,7 @@ jobs:
 
       - name: run make for nadeem
         run: |
-          make 'nadeem'
+          make
 
       # Step 3: Run the Makefile targets
       - name: install rust
