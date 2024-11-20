@@ -26,18 +26,30 @@ jobs:
         run: |
           make -f ./nkMakefile nadeem
 
-      # Step 3: Run the Makefile targets
-      - name: install rust
-        run: \
-          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-          . $HOME/.cargo/env
+      # # Step 3: Run the Makefile targets
+      # - name: install rust
+      #   run: \
+      #     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+      #     . $HOME/.cargo/env
 
 
-      # - name: Set up Rust
-      #   uses: actions-rs/toolchain@v1
-      #   with:
-      #     toolchain: stable
-      #     override: true
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: build
+        run: cargo build
+
+      - name: call rust main
+        run: |
+          # call rust main
+          $(GITHUB_WORKSPACE)/target/varables
+        env:
+          RUST_BACKTRACE: full
+          BG_NAME: "RegionsBank"
+          ENV: "dev"
 
       - name: check rust version
         run: |

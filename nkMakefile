@@ -1,4 +1,5 @@
 nk := khalid
+.PHONY: nadeem
 nadeem:
 	  echo "Hello World"
 		echo $(nk)
