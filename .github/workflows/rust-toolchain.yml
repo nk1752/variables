@@ -39,13 +39,13 @@ jobs:
           toolchain: stable
           override: true
 
-      - name: build
-        run: cargo build
+      # - name: build
+      #   run: cargo build
 
       - name: call rust main
         run: |
           # call rust main
-          $(GITHUB_WORKSPACE)/target/varables
+          cargo run
         env:
           RUST_BACKTRACE: full
           BG_NAME: "RegionsBank"
@@ -57,8 +57,8 @@ jobs:
           cargo --version
           ls -la $HOME/.cargo/bin
 
-      - name: Build
-        run: cargo build
+      # - name: Build
+      #   run: cargo build
       # - name: Test
       #   run: cargo test
       # - name: Check
