@@ -7,6 +7,12 @@ on:
   pull_request:
     branches:
       - main
+
+env:
+  RUST_BACKTRACE: full
+  BG_NAME: "RegionsBank"
+  ENV: "dev"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -45,11 +51,11 @@ jobs:
       - name: call rust main
         run: |
           # call rust main
-          cargo run -- "RegionsBank" "dev"
+          cargo run -- ${{ env.BG_NAME}} ${{ env.ENV }}
         env:
           RUST_BACKTRACE: full
-          BG_NAME: "RegionsBank"
-          ENV: "dev"
+          BG_NAME: "BaBa"
+          ENV: "test"
 
       - name: check rust version
         run: |
