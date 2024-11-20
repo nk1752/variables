@@ -45,7 +45,7 @@ jobs:
       - name: call rust main
         run: |
           # call rust main
-          cargo run
+          cargo run -- -c ${{ github.workspace }}/input.yaml -o ${{ github.workspace }}/output.yaml
         env:
           RUST_BACKTRACE: full
           BG_NAME: "RegionsBank"
