@@ -32,7 +32,7 @@ jobs:
 
       - name: run make for nadeem
         run: |
-          make -f ./${{github.workspace}}/makefiles/nkMakefile nadeem
+          make -f ${{github.workspace}}/makefiles/nkMakefile nadeem
 
       # Step 3: Run the Makefile targets
       #. $HOME/.cargo/env
