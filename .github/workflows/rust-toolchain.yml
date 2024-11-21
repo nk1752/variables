@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: repo checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.2.2
 
       - name: workspace
         run: |
@@ -32,35 +32,36 @@ jobs:
         run: |
           make -f ./nkMakefile nadeem
 
-      # # Step 3: Run the Makefile targets
-      # - name: install rust
-      #   run: \
-      #     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-      #     . $HOME/.cargo/env
+      # Step 3: Run the Makefile targets
+      - name: install rust
+        run: \
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+          . $HOME/.cargo/env
 
 
-      - name: Set up Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
+      # - name: Set up Rust
+      #   uses: actions-rs/toolchain@v1.0.7
+      #   with:
+      #     toolchain: stable
+      #     override: true
 
       # - name: build
       #   run: cargo build
 
-      - name: call rust main
-        run: |
-          # call rust main
-          cargo run -- ${{ env.BG_NAME}} ${{ env.ENV }}
-        env:
-          RUST_BACKTRACE: full
-          BG_NAME: "BaBa"
-          ENV: "test"
+      # - name: call rust main
+      #   run: |
+      #     # call rust main
+      #     cargo run -- ${{ env.BG_NAME}} ${{ env.ENV }}
+      #   env:
+      #     RUST_BACKTRACE: full
+      #     BG_NAME: "BaBa"
+      #     ENV: "test"
 
       - name: check rust version
         run: |
           rustc --version
           cargo --version
+          echo "path -> $PATH"
           ls -la $HOME/.cargo/bin
 
       # - name: Build
