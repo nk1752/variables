@@ -23,10 +23,12 @@ jobs:
       - name: workspace
         run: |
           ls -l
-          echo "$pwd/hello"
-          echo "${{ github.workspace }}"
-          echo "$GITHUB_WORKSPACE"
-          echo "$HOME"
+          echo "pwd: $pwd"
+          echo "github_workspace: ${{ github.workspace }}"
+          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+          echo "HOME: $HOME"
+          echo "RUNNER_WORKSPACE: $RUNNER_WORKSPACE"
+          ls -l $GITHUB_WORKSPACE
 
       - name: run make for nadeem
         run: |
