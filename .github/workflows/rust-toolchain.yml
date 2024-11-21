@@ -33,10 +33,11 @@ jobs:
           make -f ./nkMakefile nadeem
 
       # Step 3: Run the Makefile targets
+      #. $HOME/.cargo/env
       - name: install rust
-        run: \
+        run: |
           curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-          . $HOME/.cargo/env
+          export PATH=$HOME/.cargo/bin:$PATH
 
 
       # - name: Set up Rust
